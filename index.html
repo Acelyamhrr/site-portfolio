@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Açelya Muharremoglu — Portfolio développeuse, BUT Informatique, recherche alternance">
+  <title>Açelya | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-badge">Dev × Créativité × Sport</div>
+    <h1><em>Açelya</em> <span class="mori">Muharremoglu</span></h1>
+    <p class="hero-subtitle">Étudiante en BUT Informatique parcours Développement d'Applications à l'IUT Robert Schuman — je cherche une alternance et j'aime construire des trucs qui ont du sens.</p>
+  </div>
+</section>
+
+<!-- FINDER WINDOW -->
+<section class="finder-section">
+  <div class="finder-window">
+    <div class="finder-titlebar">
+      <div class="window-controls">
+        <span class="control close"></span>
+        <span class="control minimize"></span>
+        <span class="control maximize"></span>
+      </div>
+      <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+      <div class="titlebar-center">
+        <button class="nav-btn disabled" id="back-btn">&lt;</button>
+        <button class="nav-btn disabled" id="forward-btn">&gt;</button>
+        <span class="current-folder" id="current-folder-name">TOUT LE CONTENU</span>
+      </div>
+      <div class="titlebar-right">
+        <button class="view-btn" id="view-grid-btn" title="Grande icônes">⊞</button>
+        <button class="view-btn active" id="view-list-btn" title="Liste">≡</button>
+      </div>
+    </div>
+
+    <div class="finder-content">
+      <aside class="finder-sidebar" id="finder-sidebar">
+        <div class="sidebar-section">
+          <h3>Favoris</h3>
+          <ul>
+            <li><a href="#" data-folder="root" class="sidebar-link active"><span class="icon">📁</span> TOUT LE CONTENU</a></li>
+            <li><a href="#" data-folder="projets" class="sidebar-link"><span class="icon">🚀</span> Projets</a></li>
+            <li><a href="#" data-folder="skills" class="sidebar-link"><span class="icon">🛠️</span> Skills</a></li>
+            <li><a href="#" data-folder="about" class="sidebar-link"><span class="icon">👤</span> About me</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-section">
+          <h3>Tags</h3>
+          <ul class="tags-list">
+            <li><a href="#" data-tag="dev" class="sidebar-link"><span class="tag-dot tag-green"></span> dev</a></li>
+            <li><a href="#" data-tag="web" class="sidebar-link"><span class="tag-dot tag-blue"></span> web</a></li>
+            <li><a href="#" data-tag="jeu" class="sidebar-link"><span class="tag-dot tag-pink"></span> jeu</a></li>
+            <li><a href="#" data-tag="unity" class="sidebar-link"><span class="tag-dot tag-orange"></span> unity</a></li>
+            <li><a href="#" data-folder="about" class="sidebar-link"><span class="tag-dot tag-red"></span> about</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="finder-main" id="finder-main">
+
+        <!-- ROOT -->
+        <div class="view-container" id="view-root">
+          <div class="folders-container" id="root-container">
+            <div class="folder-item" data-folder="projets">
+              <div class="folder-icon"><img src="img/folder-bleu.png" alt="Projets" onerror="this.style.display='none';this.parentElement.innerHTML='🚀'"></div>
+              <div class="folder-name"><span class="tag-dot tag-green"></span><span>projets</span></div>
+            </div>
+            <div class="folder-item" data-folder="skills">
+              <div class="folder-icon"><img src="img/folder-carreau.png" alt="Skills" onerror="this.style.display='none';this.parentElement.innerHTML='🛠️'"></div>
+              <div class="folder-name"><span class="tag-dot tag-blue"></span><span>skills</span></div>
+            </div>
+            <div class="folder-item" data-folder="about">
+              <div class="folder-icon"><img src="img/folder-rose2.png" alt="About" onerror="this.style.display='none';this.parentElement.innerHTML='👤'"></div>
+              <div class="folder-name"><span class="tag-dot tag-red"></span><span>about me</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETS -->
+        <div class="view-container" id="view-projets" style="display:none">
+          <div class="files-grid" id="projets-container">
+
+            <!--
+              AJOUTER UN PROJET :
+              1. Copie le bloc .file-item
+              2. Mets un data-file="id-unique" et data-tags="tag1,tag2"
+              3. Ajoute les données dans fileData{} dans script.js
+            -->
+
+            <div class="file-item" data-file="projet-audit" data-tags="jeu,unity,dev,csharp">
+              <div class="file-icon"><img src="img/projet-audit.png" alt="Audit Royal"></div>
+              <div class="file-name"><span class="tag-dot tag-pink"></span>Audit Royal</div>
+              <div class="file-tags-row"><span class="mini-tag">unity</span><span class="mini-tag">jeu</span></div>
+            </div>
+
+            <!-- Sous-dossier -->
+            <div class="folder-item subfolder-item" data-folder="projets-web">
+              <div class="folder-icon"><img src="img/folder-bleu.png" alt="Web" onerror="this.style.display='none';this.parentElement.innerHTML='🌐'"></div>
+              <div class="folder-name"><span class="tag-dot tag-blue"></span><span>projets web</span></div>
+            </div>
+
+            <div class="file-item file-item--add" data-file="add-hint">
+              <div class="file-icon file-icon--add"></div>
+              <div class="file-name"><span class="tag-dot tag-gray"></span>Ajouter un projet</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOUS-DOSSIER projets-web -->
+        <div class="view-container" id="view-projets-web" style="display:none">
+          <div class="files-grid">
+            <div class="file-item file-item--add" data-file="add-hint">
+              <div class="file-icon file-icon--add"></div>
+              <div class="file-name"><span class="tag-dot tag-gray"></span>Ton projet web ici</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="view-container" id="view-skills" style="display:none">
+          <div class="files-list">
+            <div class="folder-item subfolder-item subfolder-row" data-folder="skills-web"><span class="file-icon-small">🌐</span><span class="file-name"><span class="tag-dot tag-blue"></span>Web</span></div>
+            <div class="folder-item subfolder-item subfolder-row" data-folder="skills-app"><span class="file-icon-small">📱</span><span class="file-name"><span class="tag-dot tag-green"></span>Application</span></div>
+            <div class="folder-item subfolder-item subfolder-row" data-folder="skills-sys"><span class="file-icon-small">⚙️</span><span class="file-name"><span class="tag-dot tag-red"></span>Système & Réseau</span></div>
+            <div class="folder-item subfolder-item subfolder-row" data-folder="skills-db"><span class="file-icon-small">🗄️</span><span class="file-name"><span class="tag-dot tag-orange"></span>Base de données</span></div>
+            <div class="folder-item subfolder-item subfolder-row" data-folder="skills-tools"><span class="file-icon-small">🔧</span><span class="file-name"><span class="tag-dot tag-pink"></span>Outils & Bureautique</span></div>
+          </div>
+        </div>
+
+        <div class="view-container" id="view-skills-web" style="display:none">
+          <div class="files-list">
+            <div class="file-row" data-file="skill-html"><span class="file-icon-small">🌐</span><span class="file-name"><span class="tag-dot tag-blue"></span>HTML / CSS</span></div>
+            <div class="file-row" data-file="skill-js"><span class="file-icon-small">🌐</span><span class="file-name"><span class="tag-dot tag-blue"></span>JavaScript</span></div>
+            <div class="file-row" data-file="skill-php"><span class="file-icon-small">🌐</span><span class="file-name"><span class="tag-dot tag-blue"></span>PHP</span></div>
+            <div class="file-row" data-file="skill-laravel"><span class="file-icon-small">🌐</span><span class="file-name"><span class="tag-dot tag-blue"></span>Laravel</span></div>
+          </div>
+        </div>
+
+        <div class="view-container" id="view-skills-app" style="display:none">
+          <div class="files-list">
+            <div class="file-row" data-file="skill-csharp"><span class="file-icon-small">📱</span><span class="file-name"><span class="tag-dot tag-green"></span>C#</span></div>
+            <div class="file-row" data-file="skill-java"><span class="file-icon-small">📱</span><span class="file-name"><span class="tag-dot tag-green"></span>Java</span></div>
+            <div class="file-row" data-file="skill-python"><span class="file-icon-small">📱</span><span class="file-name"><span class="tag-dot tag-green"></span>Python</span></div>
+            <div class="file-row" data-file="skill-dotnet"><span class="file-icon-small">📱</span><span class="file-name"><span class="tag-dot tag-green"></span>.NET</span></div>
+            <div class="file-row" data-file="skill-unity"><span class="file-icon-small">🎮</span><span class="file-name"><span class="tag-dot tag-orange"></span>Unity</span></div>
+          </div>
+        </div>
+
+        <div class="view-container" id="view-skills-sys" style="display:none">
+          <div class="files-list">
+            <div class="file-row" data-file="skill-c"><span class="file-icon-small">⚙️</span><span class="file-name"><span class="tag-dot tag-red"></span>C</span></div>
+            <div class="file-row" data-file="skill-asm"><span class="file-icon-small">⚙️</span><span class="file-name"><span class="tag-dot tag-red"></span>Assembleur</span></div>
+          </div>
+        </div>
+
+        <div class="view-container" id="view-skills-db" style="display:none">
+          <div class="files-list">
+            <div class="file-row" data-file="skill-sql"><span class="file-icon-small">🗄️</span><span class="file-name"><span class="tag-dot tag-orange"></span>SQL</span></div>
+          </div>
+        </div>
+
+        <div class="view-container" id="view-skills-tools" style="display:none">
+          <div class="files-list">
+            <div class="file-row" data-file="skill-git"><span class="file-icon-small">🔧</span><span class="file-name"><span class="tag-dot tag-pink"></span>Git / GitHub</span></div>
+            <div class="file-row" data-file="skill-wf"><span class="file-icon-small">🔧</span><span class="file-name"><span class="tag-dot tag-pink"></span>Windows Forms</span></div>
+            <div class="file-row" data-file="skill-office"><span class="file-icon-small">📊</span><span class="file-name"><span class="tag-dot tag-pink"></span>Word, Excel, PowerPoint</span></div>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="view-container" id="view-about" style="display:none">
+          <div class="about-image-container">
+            <img src="img/aboutme.png" alt="About Me" onerror="this.style.display='none';document.getElementById('about-fallback').style.display='flex'">
+            <div id="about-fallback" class="about-fallback" style="display:none">
+              <div class="about-avatar">👩‍💻</div>
+              <div class="about-text">
+                <h3>Açelya Muharremoglu</h3>
+                <p class="about-role">Développeuse · BUT Info · Strasbourg</p>
+                <p>Curieuse et créative, j'aime construire des projets qui ont du sens.</p>
+                <div class="about-passions">
+                  <span>🏀 Basketball</span><span>🏃 Running</span><span>🏔️ Randonnée</span>
+                  <span>📚 Lecture</span><span>✈️ Voyage</span><span>🎬 Films & Séries</span>
+                  <span>🎥 Création vidéo</span><span>🎨 Mode</span>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="about-contact-link"></a>
+          </div>
+        </div>
+
+      </main>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TIMELINE -->
+<section id="parcours" class="timeline-section">
+  <div class="section-header">
+    <span class="section-tag">Parcours</span>
+    <h2 class="title-serif">Mon <em>Chemin</em></h2>
+    <p>Formations et étapes clés</p>
+  </div>
+
+  <div class="timeline">
+
+    <!--
+      AJOUTER UNE ÉTAPE :
+      Classes disponibles : tl-item--current / tl-item--done / tl-item--future
+    -->
+
+    <div class="tl-item tl-item--future">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026</div>
+        <div class="tl-title">Alternance 🔍</div>
+        <div class="tl-desc">Développement d'applications — recherche active</div>
+        <span class="tl-badge tl-badge--future">Recherche active</span>
+      </div>
+    </div>
+
+    <div class="tl-item tl-item--current">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2025 — en cours</div>
+        <div class="tl-title">BUT Informatique — Semestre 3</div>
+        <div class="tl-school">IUT Robert Schuman · Université de Strasbourg</div>
+        <div class="tl-desc">Parcours Développement d'Applications</div>
+        <div class="tl-pills">
+          <span class="tl-pill">Développement web</span>
+          <span class="tl-pill">Développement efficace</span>
+          <span class="tl-pill">Analyse</span>
+          <span class="tl-pill">Qualité de développement</span>
+          <span class="tl-pill">Programmation système</span>
+          <span class="tl-pill">Architecture des réseaux</span>
+          <span class="tl-pill">SQL dans un langage de programmation</span>
+        </div>
+        <span class="tl-badge tl-badge--current">En cours</span>
+      </div>
+    </div>
+
+    <div class="tl-item tl-item--done">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2024 – 2025</div>
+        <div class="tl-title">BUT Informatique — BUT1 Tronc Commun</div>
+        <div class="tl-school">IUT Robert Schuman · Université de Strasbourg</div>
+        <div class="tl-pills">
+          <span class="tl-pill">Développement orienté objets</span>
+          <span class="tl-pill">IHM</span>
+          <span class="tl-pill">Qualité de développement</span>
+          <span class="tl-pill">Communication bas niveau</span>
+          <span class="tl-pill">Réseaux</span>
+          <span class="tl-pill">Base de données</span>
+        </div>
+        <span class="tl-badge tl-badge--done">✓ Validé</span>
+      </div>
+    </div>
+
+    <div class="tl-item tl-item--done">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2024</div>
+        <div class="tl-title">Baccalauréat Général</div>
+        <div class="tl-school">Lycée Édouard Schuré · Barr</div>
+        <span class="tl-badge tl-badge--done">✓ Obtenu</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CONTACT FORMULAIRE -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-content">
+      <div class="dispo-banner">
+        <span class="dispo-dot"></span>
+        <span>Disponible pour une alternance — 2026</span>
+      </div>
+      <h2 class="title-serif">Envoie-moi <em>un message</em></h2>
+      <p>Recruteur, développeur, curieux — je réponds dans les 48h ✌️</p>
+    </div>
+    <form action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST" class="contact-form" id="contact-form-el">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Nom</label>
+          <input type="text" id="fname" name="name" placeholder="Jean Dupont" required>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="jean@exemple.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fsubject">Sujet</label>
+        <input type="text" id="fsubject" name="subject" placeholder="Proposition d'alternance, question…" required>
+      </div>
+      <div class="form-group">
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" name="message" rows="5" placeholder="Bonjour Açelya, …" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Envoyer →</button>
+      <p class="form-success" id="form-success">✅ Message envoyé, merci !</p>
+      <p class="form-error" id="form-error">❌ Une erreur s'est produite, réessaie.</p>
+    </form>
+
+    <div class="contact-alt">
+  
+      <div class="contact-alt-camera">
+        <img src="img/1.png" alt="Contact visuel">
+      </div>
+
+      <div class="contact-alt-content">
+        <h3>Ou retrouve-moi ailleurs</h3>
+        <p>Je partage aussi mes projets et contenus en ligne</p>
+
+        <div class="contact-links">
+          <a href="https://tiktok.com/@tonprofil" target="_blank" title="TikTok">
+            <span class="social-icon social-tiktok"></span>
+          </a>
+
+          <a href="https://youtube.com/@tonprofil" target="_blank" title="YouTube">
+            <span class="social-icon social-youtube"></span>
+          </a>
+
+          <a href="mailto:ton.email@exemple.com" title="Email">
+            <span class="social-icon social-email"></span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo"><em>Açelya</em></div>
+    <p class="footer-tagline">Remember to build · Remember to ship · Remember to learn</p>
+    <p class="copyright">© 2025–2026 Açelya Muharremoglu · BUT Informatique · IUT Robert Schuman</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
