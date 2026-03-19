@@ -12,35 +12,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileData = {
     'projet-audit': {
       title: 'Audit Royal',
+      filename: 'audit_royal.projet',
       meta: '16 semaines · 4 développeurs · Jeu sérieux',
       description: 'Simulation d\'audit en contexte universitaire. Le joueur incarne un auditeur et prend des décisions stratégiques sur la gestion d\'une entreprise fictive.',
-      tags: ['jeu', 'unity', 'C#', 'dev'],
-      url: '#',
-      urlLabel: '🐙 GitHub',
-    },
-    'add-hint': {
-      title: 'Ajouter un projet',
-      meta: 'Template',
-      description: 'Dans le HTML, duplique un bloc .file-item. Dans script.js, duplique une entrée dans fileData{}. Change le data-file et les données.',
-      tags: [],
-    },
-    'skill-html':   { title: 'HTML / CSS',       meta: 'Web', description: 'Structure et mise en forme de pages web.', tags: ['web'] },
-    'skill-js':     { title: 'JavaScript',        meta: 'Web', description: 'Interactivité, DOM, logique front-end.', tags: ['web'] },
-    'skill-php':    { title: 'PHP',               meta: 'Web', description: 'Développement back-end et traitement serveur.', tags: ['web'] },
-    'skill-laravel':{ title: 'Laravel',           meta: 'Web · Framework PHP', description: 'Framework MVC PHP pour applications web structurées.', tags: ['web'] },
-    'skill-csharp': { title: 'C#',                meta: 'Application', description: 'Développement d\'applications .NET et jeux Unity.', tags: ['dev'] },
-    'skill-java':   { title: 'Java',              meta: 'Application', description: 'Programmation orientée objet et applications desktop.', tags: ['dev'] },
-    'skill-python': { title: 'Python',            meta: 'Application', description: 'Scripts, automatisation, traitement de données.', tags: ['dev'] },
-    'skill-dotnet': { title: '.NET',              meta: 'Application', description: 'Framework Microsoft pour applications multiplateformes.', tags: ['dev'] },
-    'skill-unity':  { title: 'Unity',             meta: 'Game Dev', description: 'Moteur de jeu 2D/3D. Utilisé pour le projet Audit Royal.', tags: ['unity', 'jeu'] },
-    'skill-c':      { title: 'C',                 meta: 'Système', description: 'Programmation bas niveau, gestion mémoire.', tags: ['dev'] },
-    'skill-asm':    { title: 'Assembleur',        meta: 'Système', description: 'Programmation très bas niveau, architecture processeur.', tags: ['dev'] },
-    'skill-sql':    { title: 'SQL',               meta: 'Base de données', description: 'Création, manipulation et interrogation de bases relationnelles.', tags: ['dev'] },
-    'skill-git':    { title: 'Git / GitHub',      meta: 'Outils', description: 'Versioning, branches, collaboration en équipe.', tags: ['dev'] },
-    'skill-wf':     { title: 'Windows Forms',     meta: 'Outils', description: 'Création d\'interfaces graphiques desktop sous Windows.', tags: ['dev'] },
-    'skill-office': { title: 'Bureautique',       meta: 'Outils', description: 'Word, Excel, PowerPoint — usage professionnel.', tags: [] },
-  };
+      tags: [
+        { label: 'unity',  bg: '#f0ece6', color: '#7b4a2a' },
+        { label: 'C#',     bg: '#e8f0e4', color: '#2a4a1a' },
+        { label: 'jeu',    bg: '#f4e4f0', color: '#4a1a3a' },
+      ],
+      images: [
+        'img/audit-royal-menu.png',
+        'img/audit-royal-fin.png',
 
+        // Mets ici les chemins de tes images/collages
+        // 'img/audit-1.jpg',
+        // 'img/audit-2.jpg',
+      ],
+      emoji: '🎮', // affiché si pas d'images
+      github: 'https://github.com/Acelyamhrr/Audit-Royal', // remplace par l'URL réelle
+      // demo: '#', // décommente si tu as une démo
+    },
+
+    // ── Skills (pas de modale complète, juste info basique) ──
+    'skill-html':    { title: 'HTML / CSS',    meta: 'Web', description: 'Structure et mise en forme de pages web.', tags: [] },
+    'skill-js':      { title: 'JavaScript',    meta: 'Web', description: 'Interactivité, DOM, logique front-end.', tags: [] },
+    'skill-php':     { title: 'PHP',           meta: 'Web', description: 'Développement back-end.', tags: [] },
+    'skill-laravel': { title: 'Laravel',       meta: 'Framework PHP', description: 'MVC PHP pour apps web structurées.', tags: [] },
+    'skill-csharp':  { title: 'C#',            meta: 'Application', description: 'Apps .NET et jeux Unity.', tags: [] },
+    'skill-java':    { title: 'Java',          meta: 'Application', description: 'POO et apps desktop.', tags: [] },
+    'skill-python':  { title: 'Python',        meta: 'Application', description: 'Scripts, automatisation, data.', tags: [] },
+    'skill-dotnet':  { title: '.NET',          meta: 'Application', description: 'Framework Microsoft multiplateforme.', tags: [] },
+    'skill-unity':   { title: 'Unity',         meta: 'Game Dev', description: 'Moteur 2D/3D. Projet Audit Royal.', tags: [] },
+    'skill-c':       { title: 'C',             meta: 'Système', description: 'Programmation bas niveau.', tags: [] },
+    'skill-asm':     { title: 'Assembleur',    meta: 'Système', description: 'Architecture processeur.', tags: [] },
+    'skill-sql':     { title: 'SQL',           meta: 'Base de données', description: 'Bases relationnelles.', tags: [] },
+    'skill-git':     { title: 'Git / GitHub',  meta: 'Outils', description: 'Versioning, collaboration.', tags: [] },
+    'skill-wf':      { title: 'Windows Forms', meta: 'Outils', description: 'UI desktop Windows.', tags: [] },
+    'skill-office':  { title: 'Bureautique',   meta: 'Outils', description: 'Word, Excel, PowerPoint.', tags: [] },
+    'add-hint':      { title: 'Ajouter un projet', meta: 'Template', description: 'Duplique un .file-item dans le HTML et une entrée dans fileData{}.', tags: [] },
+  };
   /* ─── NOMS DE DOSSIERS ────────────────────────────────────────────────── */
   const folderNames = {
     root:           'TOUT LE CONTENU',
@@ -196,11 +206,77 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Fichiers — sélection visuelle uniquement (plus de preview panel)
+  function openModal(fileId) {
+    const data = fileData[fileId];
+    if (!data || !data.title) return;
+
+    // filename
+    document.getElementById('modal-filename').textContent = data.filename || `${fileId}.projet`;
+
+    // images mosaïque
+    const imgZone = document.getElementById('modal-images');
+    imgZone.innerHTML = '';
+    const imgs = (data.images || []).filter(Boolean);
+    if (imgs.length > 0) {
+      imgZone.className = `app-modal-images layout-${Math.min(imgs.length, 3)}`;
+      imgs.slice(0, 3).forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = data.title;
+        imgZone.appendChild(img);
+      });
+    } else {
+      imgZone.className = 'app-modal-images layout-1';
+      imgZone.innerHTML = `<div class="app-modal-img-placeholder">${data.emoji || '📁'}</div>`;
+    }
+
+    // contenu
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-meta').textContent = data.meta || '';
+    document.getElementById('modal-desc').textContent = data.description || '';
+
+    // tags
+    const tagsEl = document.getElementById('modal-tags');
+    tagsEl.innerHTML = (data.tags || []).map(t =>
+      `<span style="background:${t.bg};color:${t.color}">${t.label}</span>`
+    ).join('');
+
+    // actions
+    const actEl = document.getElementById('modal-actions');
+    let actHtml = '';
+    if (data.github) actHtml += `<a href="${data.github}" target="_blank" rel="noopener noreferrer" class="app-modal-btn-gh">🐙 GitHub</a>`;
+    if (data.demo)   actHtml += `<a href="${data.demo}" target="_blank" rel="noopener noreferrer" class="app-modal-btn-demo">▶ Demo</a>`;
+    actHtml += `<button class="app-modal-btn-like" id="modal-like-btn" onclick="toggleModalLike()">♡</button>`;
+    actEl.innerHTML = actHtml;
+
+    document.getElementById('projet-modal').classList.add('open');
+    document.getElementById('projet-modal').dataset.currentFile = fileId;
+  }
+
+  function toggleModalLike() {
+    const btn = document.getElementById('modal-like-btn');
+    btn.classList.toggle('liked');
+    btn.textContent = btn.classList.contains('liked') ? '♥' : '♡';
+  }
+
+  // Fermeture
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('projet-modal').classList.remove('open');
+  });
+  document.getElementById('projet-modal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.getElementById('projet-modal').classList.remove('open');
+  });
+
+  // Clics fichiers
   document.querySelectorAll('.file-item[data-file]').forEach(item => {
     item.addEventListener('click', e => {
       e.stopPropagation();
       document.querySelectorAll('.file-item, .file-row').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
+      openModal(item.dataset.file);
     });
   });
   document.querySelectorAll('.file-row[data-file]').forEach(item => {
@@ -208,8 +284,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       document.querySelectorAll('.file-item, .file-row').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
+      openModal(item.dataset.file);
     });
-  });
+  });  
 
   // Sidebar — dossiers
   document.querySelectorAll('.sidebar-link[data-folder]').forEach(link => {
@@ -301,6 +378,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     observer.observe(el);
   });
+
+  /* ─── MODALE PROJET ──────────────────────── */
+  function showPreview(fileId) {
+    const data = fileData[fileId];
+    if (!data || !data.title) return;
+
+    let html = `<div class="modal-header">
+      <h3>${data.title}</h3>
+      <button class="modal-close" onclick="document.getElementById('projet-modal').classList.remove('open')">✕</button>
+    </div>`;
+    if (data.meta)        html += `<p class="modal-meta">${data.meta}</p>`;
+    if (data.description) html += `<p class="modal-desc">${data.description}</p>`;
+    if (data.tags?.length) {
+      html += `<div class="modal-tags">` + data.tags.map(t => `<span class="preview-tag-pill">${t}</span>`).join('') + `</div>`;
+    }
+    if (data.url && data.url !== '#') {
+      html += `<a href="${data.url}" target="_blank" rel="noopener noreferrer" class="modal-btn">${data.urlLabel || 'Ouvrir →'}</a>`;
+    }
+
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('projet-modal').classList.add('open');
+  }
 
   /* ─── INIT ────────────────────────────────────────────────────────────── */
   navigateTo('root');

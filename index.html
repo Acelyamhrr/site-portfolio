@@ -140,9 +140,11 @@
             </div>
             </div>
           </div>
-        </div>
+        
 
         <!-- SOUS-DOSSIER projets-web -->
+         <!--
+
         <div class="view-container" id="view-projets-web" style="display:none">
           <div class="files-grid">
             <div class="file-item file-item--add" data-file="add-hint">
@@ -151,6 +153,8 @@
             </div>
           </div>
         </div>
+
+         -->
 
         <!-- SKILLS -->
         <div class="view-container" id="view-skills" style="display:none">
@@ -386,5 +390,33 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- MODALE PROJET -->
+<div id="projet-modal" class="app-modal-overlay">
+  <div class="app-modal-window">
+    <div class="app-modal-titlebar">
+      <div class="window-controls">
+        <span class="control close" id="modal-close"></span>
+        <span class="control minimize"></span>
+        <span class="control maximize"></span>
+      </div>
+      <span class="app-modal-filename" id="modal-filename">projet.app</span>
+    </div>
+    <div class="app-modal-images" id="modal-images"></div>
+    <div class="app-modal-body">
+      <div class="app-modal-header">
+        <div>
+          <h2 class="app-modal-title" id="modal-title"></h2>
+          <p class="app-modal-meta" id="modal-meta"></p>
+        </div>
+        <div class="app-modal-tags" id="modal-tags"></div>
+      </div>
+      <p class="app-modal-desc" id="modal-desc"></p>
+      <div class="app-modal-divider"></div>
+      <div class="app-modal-actions" id="modal-actions"></div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
