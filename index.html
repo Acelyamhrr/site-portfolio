@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -119,13 +120,6 @@
         <!-- PROJETS -->
         <div class="view-container" id="view-projets" style="display:none">
           <div class="files-grid" id="projets-container">
-
-            <!--
-              AJOUTER UN PROJET :
-              1. Copie le bloc .file-item
-              2. Mets un data-file="id-unique" et data-tags="tag1,tag2"
-              3. Ajoute les données dans fileData{} dans script.js
-            -->
 
             <div class="file-item" data-file="projet-audit" data-tags="jeu,unity,dev,csharp">
               <div class="file-icon"><img src="img/audit-royal.png" alt="Audit Royal"></div>
@@ -355,7 +349,7 @@
         <span>Disponible pour une alternance — 2026</span>
       </div>
       <h2 class="title-serif">Envoie-moi <em>un message</em></h2>
-      <p>Recruteur, développeur, curieux — je réponds dans les 48h ✌️</p>
+      <p>Recruteur, développeur, curieux — je réponds rapidement</p>
     </div>
     <form action="https://formspree.io/f/xeernwqq" method="POST" class="contact-form" id="contact-form-el">
       <div class="form-row">
@@ -384,27 +378,25 @@
     <div class="contact-alt">
   
       <div class="contact-alt-camera">
-        <img src="img/1.png" alt="Contact visuel">
+        <img src="img/contact.png" alt="Contact visuel">
       </div>
 
       <div class="contact-alt-content">
-        <h3>Ou retrouve-moi ailleurs</h3>
-        <p>Je partage aussi mes projets et contenus en ligne</p>
+        <h3>Ou retrouve-moi ailleurs !</h3>
 
         <div class="contact-links">
-          <a href="https://tiktok.com/@tonprofil" target="_blank" title="TikTok">
-            <span class="social-icon social-tiktok"></span>
+          <a href="https://www.linkedin.com/in/acelyamuharremoglu/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
           </a>
 
-          <a href="https://youtube.com/@tonprofil" target="_blank" title="YouTube">
-            <span class="social-icon social-youtube"></span>
+          <a href="mailto:acelya.muharremoglu@etu.unistra.fr" title="Email">
+            <i class="fas fa-envelope"></i>
           </a>
 
-          <a href="mailto:ton.email@exemple.com" title="Email">
-            <span class="social-icon social-email"></span>
+          <a href="cv.pdf" target="_blank" title="CV">
+            <i class="fas fa-file-pdf"></i>
           </a>
         </div>
-
       </div>
 
     </div>
@@ -422,7 +414,6 @@
 
 <script src="script.js"></script>
 
-<!-- MODALE PROJET -->
 <div id="projet-modal" class="app-modal-overlay">
   <div class="app-modal-window">
     <div class="app-modal-titlebar">

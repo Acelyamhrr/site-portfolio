@@ -1,14 +1,5 @@
-/* ══════════════════════════════════════════
-   AÇELYA — script.js
-   ══════════════════════════════════════════ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ─── DONNÉES PREVIEW ─────────────────────────────────────────────────────
-     Pour ajouter un fichier :
-     1. Crée un .file-item avec data-file="mon-id" dans le HTML
-     2. Ajoute une entrée ici avec le même id
-  ─────────────────────────────────────────────────────────────────────────── */
   const fileData = {
     'projet-audit': {
       title: 'Audit Royal',
@@ -23,14 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       images: [
         'img/audit-royal-menu.png',
         'img/audit-royal-fin.png',
-
-        // Mets ici les chemins de tes images/collages
-        // 'img/audit-1.jpg',
-        // 'img/audit-2.jpg',
       ],
       emoji: '🎮', // affiché si pas d'images
-      github: 'https://github.com/Acelyamhrr/Audit-Royal', // remplace par l'URL réelle
-      // demo: '#', // décommente si tu as une démo
+      github: 'https://github.com/Acelyamhrr/Audit-Royal', 
+      // demo: '#',
     },
 
     'projet-sim-reseau': {
@@ -44,15 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Bas-niveau',    bg: '#f4e4f0', color: '#4a1a3a' },
       ],
       images: [
-        // 'img/audit-1.jpg',
-        // 'img/audit-2.jpg',
+ 
       ],
-      emoji: '🎮', // affiché si pas d'images
+      emoji: '🎮', 
       github: 'https://github.com/Acelyamhrr/simulateur-reseau',
-      // demo: '#', // décommente si tu as une démo
+      // demo: '#',
     },
 
-    // ── Skills (pas de modale complète, juste info basique) ──
+    // ── Skills ──
     'skill-html':    { title: 'HTML / CSS',    meta: 'Web', description: 'Structure et mise en forme de pages web.', tags: [] },
     'skill-js':      { title: 'JavaScript',    meta: 'Web', description: 'Interactivité, DOM, logique front-end.', tags: [] },
     'skill-php':     { title: 'PHP',           meta: 'Web', description: 'Développement back-end.', tags: [] },
@@ -68,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'skill-git':     { title: 'Git / GitHub',  meta: 'Outils', description: 'Versioning, collaboration.', tags: [] },
     'skill-wf':      { title: 'Windows Forms', meta: 'Outils', description: 'UI desktop Windows.', tags: [] },
     'skill-office':  { title: 'Bureautique',   meta: 'Outils', description: 'Word, Excel, PowerPoint.', tags: [] },
-    'add-hint':      { title: 'Ajouter un projet', meta: 'Template', description: 'Duplique un .file-item dans le HTML et une entrée dans fileData{}.', tags: [] },
   };
+
   /* ─── NOMS DE DOSSIERS ────────────────────────────────────────────────── */
   const folderNames = {
     root:           'TOUT LE CONTENU',
@@ -423,4 +409,4 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── INIT ────────────────────────────────────────────────────────────── */
   navigateTo('root');
 
-}); // DOMContentLoaded
+}); 
