@@ -33,6 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
       // demo: '#', // décommente si tu as une démo
     },
 
+    'projet-sim-reseau': {
+      title: 'Simulateur réseau',
+      filename: 'sim-reseau.projet',
+      meta: '2 développeurs · Projet universitaire',
+      description: 'Ce projet est un simulateur de réseau local (LAN) développé dans le cadre du cours de réseaux et programmation à l IUT. Il permet de modéliser une topologie réseau complète avec des stations, des switches et leurs interconnexions. Le simulateur implémente le protocole STP (Spanning Tree Protocol) pour éviter les boucles réseau et assure la transmission intelligente de trames Ethernet entre équipements.',
+      tags: [
+        { label: 'C',  bg: '#f0ece6', color: '#7b4a2a' },
+        { label: 'Réseau',     bg: '#e8f0e4', color: '#2a4a1a' },
+        { label: 'Bas-niveau',    bg: '#f4e4f0', color: '#4a1a3a' },
+      ],
+      images: [
+        // 'img/audit-1.jpg',
+        // 'img/audit-2.jpg',
+      ],
+      emoji: '🎮', // affiché si pas d'images
+      github: 'https://github.com/Acelyamhrr/simulateur-reseau',
+      // demo: '#', // décommente si tu as une démo
+    },
+
     // ── Skills (pas de modale complète, juste info basique) ──
     'skill-html':    { title: 'HTML / CSS',    meta: 'Web', description: 'Structure et mise en forme de pages web.', tags: [] },
     'skill-js':      { title: 'JavaScript',    meta: 'Web', description: 'Interactivité, DOM, logique front-end.', tags: [] },
