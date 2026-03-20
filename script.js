@@ -31,14 +31,54 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Bas-niveau',    bg: '#f4e4f0', color: '#4a1a3a' },
       ],
       images: [
- 
+        'img/sim-res.png'
       ],
       emoji: '🎮', 
       github: 'https://github.com/Acelyamhrr/simulateur-reseau',
       // demo: '#',
     },
 
-    // ── Skills ──
+    'projet-calcul-notes': {
+      title: 'Calcul notes',
+      filename: 'calcul-notes.projet',
+      meta: 'Projet perso',
+      description: 'Une application web permettant de calculer automatiquement vos moyennes par UE et votre moyenne générale de semestre, avec sauvegarde locale et export PDF.',
+      tags: [
+        { label: 'HTML', bg: '#e3f2fd', color: '#1565c0' },
+        { label: 'CSS', bg: '#fce4ec', color: '#c2185b' },
+        { label: 'JavaScript', bg: '#e8f5e9', color: '#2e7d32' },
+        { label: 'LocalStorage', bg: '#ede7f6', color: '#512da8' },
+        ],
+      images: [
+        'img/calcul-notes.png',
+      ],
+      emoji: '📊', // affiché si pas d'images
+      github: 'https://github.com/Acelyamhrr/calcul-notes',
+      // demo: '#', // décommente si tu as une démo
+    },
+
+    'projet-bataille-navale': {
+      title: 'Bataille Navale - A31',
+      filename: 'bataille-navale.projet',
+      meta: 'Projet académique',
+      description: 'Jeu de stratégie tour par tour développé en Java avec interface graphique Swing, intégrant une IA, des armes spéciales, des pièges et un mode île. Projet basé sur une architecture MVC stricte et l’utilisation de patterns de conception.',
+      tags: [
+        { label: 'Java', bg: '#f3e5f5', color: '#6a1b9a' },
+        { label: 'Swing', bg: '#e3f2fd', color: '#1565c0' },
+        { label: 'MVC', bg: '#e8f5e9', color: '#2e7d32' },
+        { label: 'Design Patterns', bg: '#fff3e0', color: '#ef6c00' },
+        { label: 'POO', bg: '#ede7f6', color: '#512da8' },
+      ],
+      images: [
+        'img/bataille-navale1.png',
+        'img/bataille-navale2.png',
+      ],
+      emoji: '⚓',
+      github: 'https://git.unistra.fr/fouilleul-muharremoglu/a31-bataille-navale',
+      // demo: '#', // si tu as une démo
+    },
+
+    // ── Skills (pas de modale complète, juste info basique) ──
     'skill-html':    { title: 'HTML / CSS',    meta: 'Web', description: 'Structure et mise en forme de pages web.', tags: [] },
     'skill-js':      { title: 'JavaScript',    meta: 'Web', description: 'Interactivité, DOM, logique front-end.', tags: [] },
     'skill-php':     { title: 'PHP',           meta: 'Web', description: 'Développement back-end.', tags: [] },
