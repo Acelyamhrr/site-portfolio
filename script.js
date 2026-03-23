@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'jeu',    bg: '#f4e4f0', color: '#4a1a3a' },
       ],
       images: [
-        'img/audit-royal-menu.png',
-        'img/audit-royal-fin.png',
+        'img/projets/audit-royal-menu.png',
+        'img/projets/audit-royal-fin.png',
       ],
       emoji: '🎮', // affiché si pas d'images
       github: 'https://github.com/Acelyamhrr/Audit-Royal', 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Bas-niveau',    bg: '#f4e4f0', color: '#4a1a3a' },
       ],
       images: [
-        'img/sim-res.png'
+        'img/projets/sim-res.png'
       ],
       emoji: '🎮', 
       github: 'https://github.com/Acelyamhrr/simulateur-reseau',
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'LocalStorage', bg: '#ede7f6', color: '#512da8' },
         ],
       images: [
-        'img/calcul-notes.png',
+        'img/projets/calcul-notes.png',
       ],
       emoji: '📊', // affiché si pas d'images
       github: 'https://github.com/Acelyamhrr/calcul-notes',
@@ -70,15 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'POO', bg: '#ede7f6', color: '#512da8' },
       ],
       images: [
-        'img/bataille-navale1.png',
-        'img/bataille-navale2.png',
+        'img/projets/bataille-navale1.png',
+        'img/projets/bataille-navale2.png',
       ],
       emoji: '⚓',
       github: 'https://git.unistra.fr/fouilleul-muharremoglu/a31-bataille-navale',
       // demo: '#', // si tu as une démo
     },
 
-    // ── Skills (pas de modale complète, juste info basique) ──
+
+
+    // ── Skills ──
     'skill-html':    { title: 'HTML / CSS',    meta: 'Web', description: 'Structure et mise en forme de pages web.', tags: [] },
     'skill-js':      { title: 'JavaScript',    meta: 'Web', description: 'Interactivité, DOM, logique front-end.', tags: [] },
     'skill-php':     { title: 'PHP',           meta: 'Web', description: 'Développement back-end.', tags: [] },
@@ -167,59 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.file-item, .file-row').forEach(i => i.classList.remove('active'));
   }
 
-  /* ─── FILTRE PAR TAG ──────────────────────────────────────────────────── */
-  function filterByTag(tag) {
-    // Supprimer vue tag existante
-    const old = document.getElementById('view-tag-results');
-    if (old) old.remove();
-
-    document.querySelectorAll('.view-container').forEach(v => v.style.display = 'none');
-
-    // Construire la vue filtrée
-    const tagView = document.createElement('div');
-    tagView.className = 'view-container';
-    tagView.id = 'view-tag-results';
-
-    // Chercher TOUS les éléments avec ce tag (dans tous les dossiers)
-    const allItems = document.querySelectorAll('[data-file][data-tags], [data-id][data-tags]');
-    const matches = [];
-    allItems.forEach(item => {
-      const tags = (item.getAttribute('data-tags') || '').split(',').map(t => t.trim());
-      if (tags.includes(tag)) matches.push(item);
-    });
-
-    if (matches.length > 0) {
-      const grid = document.createElement('div');
-      grid.className = 'files-grid';
-      matches.forEach(item => {
-        const fileId = item.getAttribute('data-file');
-        if (!fileId || fileId === 'add-hint') return;
-        const clone = item.cloneNode(true);
-        clone.classList.remove('active');
-        clone.addEventListener('click', () => showPreview(fileId));
-        grid.appendChild(clone);
-      });
-      tagView.appendChild(grid);
-    } else {
-      tagView.innerHTML = '<p style="color:#666;text-align:center;padding:2rem;font-style:italic">Aucun fichier avec ce tag</p>';
-    }
-
-    finderMain.appendChild(tagView);
-    tagView.style.display = 'block';
-
-    folderNameEl.textContent = `Tag: ${tag}`;
-    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
-    document.querySelector(`.sidebar-link[data-tag="${tag}"]`)?.classList.add('active');
-
-    if (!isNavHistory) {
-      const entry = `tag:${tag}`;
-      navHistory = navHistory.slice(0, historyIndex + 1);
-      navHistory.push(entry);
-      historyIndex = navHistory.length - 1;
-    }
-    updateNavBtns();
-    document.querySelectorAll('.file-item, .file-row').forEach(i => i.classList.remove('active'));
-  }
 
 
 
@@ -231,8 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyHistoryEntry(entry) {
     isNavHistory = true;
-    if (entry.startsWith('tag:')) filterByTag(entry.replace('tag:', ''));
-    else navigateTo(entry);
+    navigateTo(entry);
     isNavHistory = false;
   }
 
@@ -342,14 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Sidebar — tags
-  document.querySelectorAll('.sidebar-link[data-tag]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      filterByTag(link.dataset.tag);
-      if (window.innerWidth <= 900) closeSidebar();
-    });
-  });
 
   /* ─── SIDEBAR MOBILE ──────────────────────────────────────────────────── */
   function closeSidebar() {
@@ -449,4 +389,4 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── INIT ────────────────────────────────────────────────────────────── */
   navigateTo('root');
 
-}); 
+});
