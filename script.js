@@ -129,18 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewGridBtn    = document.getElementById('view-grid-btn');
   const viewListBtn    = document.getElementById('view-list-btn');
 
-  /* ─── VUE GRILLE / LISTE ──────────────────────────────────────────────── */
-  viewGridBtn.addEventListener('click', () => {
-    document.body.classList.remove('view-list');
-    viewGridBtn.classList.add('active');
-    viewListBtn.classList.remove('active');
-  });
-  viewListBtn.addEventListener('click', () => {
-    document.body.classList.add('view-list');
-    viewListBtn.classList.add('active');
-    viewGridBtn.classList.remove('active');
-  });
-
   /* ─── NAVIGATION FINDER ───────────────────────────────────────────────── */
   function navigateTo(folder) {
     // Masquer toutes les vues

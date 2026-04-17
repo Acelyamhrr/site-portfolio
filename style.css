@@ -102,7 +102,7 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ─── FINDER ─────────────────────────────── */
 .finder-section {
-  padding: 4rem 6rem;
+  padding: 4rem clamp(1rem, 5vw, 6rem);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -354,7 +354,9 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 0.75rem;
   color: #1d1d1f;
   line-height: 1.3;
-  white-space: nowrap
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
 }
 
 .file-tags-row {
@@ -374,57 +376,6 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 /* ── Vue LISTE (toggle) ── */
-body.view-list .folders-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  gap: 0;
-  margin: 0;
-}
-body.view-list .folder-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 1rem;
-  text-align: left;
-  border-radius: 6px;
-  transform: none !important;
-}
-body.view-list .folder-item:hover { background: rgba(0,122,255,0.05); transform:none !important; }
-body.view-list .folder-icon {
-  width: 28px; height: 28px;
-  font-size: 1.2rem;
-  margin: 0;
-  aspect-ratio: unset;
-  flex-shrink: 0;
-}
-body.view-list .folder-icon img { border-radius:4px; }
-body.view-list .folder-name { justify-content: flex-start; font-size: 0.9rem; }
-
-body.view-list .files-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-body.view-list .file-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-align: left;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-}
-body.view-list .file-icon {
-  width: 28px; height: 28px;
-  aspect-ratio: unset;
-  margin: 0;
-  flex-shrink: 0;
-}
-body.view-list .file-emoji-icon { font-size: 1.2rem; }
-body.view-list .add-icon { width:28px; height:28px; font-size:1rem; margin:0; }
-body.view-list .file-name { justify-content: flex-start; font-size: 0.9rem; }
-body.view-list .file-tags-row { justify-content: flex-start; margin-top: 2px; }
-
 /* Fichiers liste */
 .files-list { max-width: 100%; }
 .file-row {
@@ -543,7 +494,7 @@ section { padding: 4rem 4rem; }
 .projects-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 6rem;
+  padding: 4rem clamp(1rem, 5vw, 6rem);
 }
 
 .projects-grid {
@@ -661,7 +612,7 @@ section { padding: 4rem 4rem; }
 .timeline-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem 6rem;
+  padding: 4rem clamp(1rem, 5vw, 6rem);
 }
 
 .timeline {
@@ -709,7 +660,7 @@ section { padding: 4rem 4rem; }
 .cv-section {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 6rem;
+  padding: 4rem clamp(1rem, 5vw, 6rem);
 }
 
 .cv-grid {
@@ -744,7 +695,7 @@ section { padding: 4rem 4rem; }
 .contact-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem 6rem;
+  padding: 4rem clamp(1rem, 5vw, 6rem);
 }
 
 .contact-container {
@@ -845,12 +796,177 @@ footer {
 }
 .copyright { font-size: 0.75rem; opacity: 0.4; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
 
+/* ─── ABOUT ME (finder) ─────────────────── */
+.about-finder-content {
+  padding: 0.5rem 0.25rem 1.5rem;
+  max-width: 620px;
+  font-family: var(--font-system);
+  color: #1d1d1f;
+}
+
+.about-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.about-avatar-ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e85d35, #ffbd2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.about-avatar-emoji { font-size: 1.8rem; }
+
+.about-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+.about-role-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.about-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  background: rgba(39,201,63,0.1);
+  color: #1a7a2a;
+  border: 1px solid rgba(39,201,63,0.3);
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+.about-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27C93F;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.about-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #86868b;
+  margin: 1.1rem 0 0.5rem;
+}
+
+.about-bio-block {
+  background: #f5f5f7;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #3d3d3f;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.about-bio-block strong { color: #1d1d1f; }
+
+.about-xp-card {
+  background: #f5f5f7;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid #ddd;
+}
+.about-xp-card--current { border-left-color: var(--clay-orange); background: #fff5f2; }
+
+.about-xp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.about-xp-company { font-weight: 700; font-size: 0.88rem; }
+.about-xp-badge {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  background: rgba(232,93,53,0.15);
+  color: var(--clay-orange);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.about-xp-role { font-size: 0.82rem; font-weight: 500; color: #555; margin-bottom: 2px; }
+.about-xp-date { font-family: var(--font-mono); font-size: 10px; color: #888; margin-bottom: 8px; }
+.about-xp-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.about-xp-pill {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  background: rgba(232,93,53,0.1);
+  color: var(--clay-orange);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.about-passions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.about-passion-chip {
+  font-size: 12px;
+  background: #f0f0f0;
+  color: #444;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: default;
+  transition: background 0.2s;
+}
+.about-passion-chip:hover { background: #e8e8e8; }
+
+.about-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.about-contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #1d1d1f;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+.about-contact-chip:hover { background: var(--clay-orange); transform: translateY(-2px); }
+
 /* ─── RESPONSIVE ─────────────────────────── */
+
+/* Tablettes larges */
 @media (max-width: 1024px) {
-  .finder-section, .projects-section, .timeline-section, .cv-section, .contact-section { padding: 3rem 2rem; }
+  .finder-section { padding: 3rem 2rem; }
+  .projects-section { padding: 3rem 2rem; }
+  .timeline-section { padding: 3rem 2rem; }
+  .cv-section { padding: 3rem 2rem; }
+  .contact-section { padding: 3rem 2rem; }
   .preview-panel { width: 240px; }
 }
 
+/* Tablettes */
 @media (max-width: 900px) {
   .sidebar-toggle { display: block; }
 
@@ -861,36 +977,165 @@ footer {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
-  .finder-sidebar.open { transform: translateX(0); box-shadow: 4px 0 15px rgba(0,0,0,0.1); }
+  .finder-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+  }
   .finder-content { position: relative; }
   .preview-panel { display: none; }
-  .preview-panel.open { display: block; position: absolute; right: 0; top: 0; height: 100%; z-index: 90; box-shadow: -4px 0 15px rgba(0,0,0,0.1); }
+  .preview-panel.open {
+    display: block;
+    position: absolute;
+    right: 0; top: 0; height: 100%;
+    z-index: 90;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .timeline-section { padding: 3rem 1.5rem; }
+  .cv-grid { grid-template-columns: 1fr; }
 }
 
+/* Mobiles larges et petites tablettes */
 @media (max-width: 768px) {
   section { padding: 2.5rem 1rem; }
+
+  /* Hero */
   .hero-section { padding: 3rem 1rem 2rem; }
-  .hero-content { padding: 1.5rem 1rem; }
-  .finder-section { padding: 1.5rem 0.5rem; }
-  .finder-titlebar { height: 40px; padding: 0 0.75rem; }
+  .hero-content { padding: 1.25rem 1rem; }
+  .hero-section h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+
+  /* Finder */
+  .finder-section { padding: 1.5rem 0.75rem; }
+  .finder-titlebar { height: 44px; padding: 0 0.75rem; }
   .titlebar-center { display: none; }
-  .finder-sidebar.open ~ .finder-main { margin-left: 200px; }
+  .finder-main { padding: 1rem; }
+  .finder-sidebar.open ~ .finder-main { margin-left: 0; }
 
-  .projects-section, .timeline-section, .cv-section, .contact-section { padding: 2.5rem 1rem; }
+  /* Timeline */
+  .timeline-section { padding: 2.5rem 1rem; }
+  .timeline { padding-left: 1.5rem; }
+  .tl-content { padding: 1rem; }
+  .tl-pills { gap: 4px; }
+  .tl-pill { font-size: 0.66rem; padding: 2px 8px; }
+
+  /* Projects */
+  .projects-section { padding: 2.5rem 1rem; }
   .projects-grid { grid-template-columns: 1fr; }
+
+  /* CV */
+  .cv-section { padding: 2.5rem 1rem; }
   .cv-grid { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-section { padding: 2.5rem 1rem; }
+  .contact-container { padding: 1.5rem 1.25rem; }
   .form-row { grid-template-columns: 1fr; }
-  .contact-container { padding: 1.5rem; }
-  .folders-container { grid-template-columns: repeat(2, 1fr); max-width: 220px; }
+  .contact-alt { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .contact-alt-camera img { max-width: 220px; margin: 0 auto; display: block; }
+
+  /* Folders grille */
+  .folders-container { justify-content: flex-start; gap: 1rem; }
+  .folder-item { width: 100px; }
+  .folder-icon { width: 80px; height: 80px; }
+
+  /* Files grid */
+  .files-grid { gap: 0.75rem; }
+  .file-item { width: 100px; }
+
+  /* About in finder */
+  .about-finder-content { padding: 0.5rem 0 1rem; }
+  .about-profile-header { gap: 0.75rem; }
 }
 
+/* Mobiles */
 @media (max-width: 480px) {
-  .hero-section h1 { font-size: 2rem; }
-  .files-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-alt { grid-template-columns: 1fr; text-align: center; }
-  .contact-alt-camera img { max-width: 200px; }
+  /* Hero */
+  .hero-section h1 { font-size: 2rem; letter-spacing: -0.01em; }
+  .hero-section .mori { font-size: 0.22em; letter-spacing: 0.2em; }
+  .hero-badge { font-size: 0.65rem; padding: 0.4rem 0.9rem; }
+  .hero-subtitle { font-size: 0.88rem; }
 
+  /* Finder */
+  .finder-section { padding: 1rem 0.5rem; }
+  .finder-window { border-radius: 10px; }
+
+  /* Files grid 2 colonnes sur mobile */
+  .files-grid { grid-template-columns: repeat(2, 1fr); display: grid !important; }
+  .file-item { width: auto; }
+
+  /* Folders 3 par ligne */
+  .folders-container { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .folder-item { width: auto; }
+  .folder-icon { width: 60px; height: 60px; }
+
+  /* Timeline */
+  .timeline { padding-left: 1.25rem; }
+  .tl-content { padding: 0.85rem; }
+  .tl-title { font-size: 0.9rem; }
+  .tl-school { font-size: 0.78rem; }
+  .tl-pills { gap: 3px; }
+  .tl-pill { font-size: 0.62rem; padding: 2px 7px; }
+
+  /* Section titles */
+  .title-serif { font-size: 1.7rem; }
+  .section-header { margin-bottom: 2rem; }
+
+  /* Contact */
+  .contact-container { padding: 1.25rem 1rem; }
+  .form-submit { width: 100%; text-align: center; }
+  .contact-alt { gap: 1.5rem; }
+
+  /* CV cards */
+  .cv-card { padding: 1rem; }
+
+  /* Modal */
+  .app-modal-window { border-radius: 10px; }
+  .app-modal-body { padding: 16px; }
+  .app-modal-header { flex-direction: column; gap: 8px; }
+  .app-modal-tags { justify-content: flex-start; }
+
+  /* Footer */
+  footer { padding: 2rem 1rem 1.5rem; }
+  .footer-logo { font-size: 1.5rem; }
+
+  /* About */
+  .about-profile-header { flex-direction: column; align-items: flex-start; }
+  .about-contact-row { flex-direction: column; }
+  .about-contact-chip { justify-content: center; }
 }
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+  .hero-section h1 { font-size: 1.7rem; }
+  .folders-container { grid-template-columns: repeat(2, 1fr) !important; }
+  .finder-section { padding: 0.75rem 0.25rem; }
+}
+
+/* Fix overflow global */
+body { overflow-x: hidden; }
+html { overflow-x: hidden; }
+
+/* Ensure file-name doesn't overflow in grid */
+.file-name {
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+}
+
+.files-list .file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Finder main scrollable sans overflow sur mobile */
+.finder-main {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* tl-pills wrapping correct sur mobile */
+.tl-pills { flex-wrap: wrap; }
 
 
 
