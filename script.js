@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'LocalStorage', bg: '#ede7f6', color: '#512da8' },
         ],
       images: [
-        'img/calcul-notes.png',
+        'img/calculateur.png',
       ],
       emoji: '📊', // affiché si pas d'images
       github: 'https://github.com/Acelyamhrr/calcul-notes',
-      // demo: '#', // décommente si tu as une démo
+      demo: 'img/calcul-note.webm', // décommente si tu as une démo
     },
 
     'projet-bataille-navale': {
